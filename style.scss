@@ -78,22 +78,23 @@ header {
 
     .phone-header {
         position: absolute;
-        background: $prim;
-        padding: .5rem 0;
         top: 0;
         right: 6.5rem;
-        display: flex;
-        border-bottom-left-radius: 5rem;
+        background: #EEEFEF;
         border-bottom-right-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        display: flex;
 
         .number {
             color: $font;
+            margin: .5rem 0;
             font-size: 2rem;
             font-weight: bold;
             display: flex;
             align-items: center;
-            margin-left: 3rem;
-            margin-right: 4rem;
+            padding-left: 3rem;
+            grid-column: col-start/span 6;
+            border-bottom-left-radius: 5rem;
 
             .phone-icon {
                 align-items: center;
@@ -107,11 +108,18 @@ header {
         }
 
         .free-quote {
-            margin-right: 3rem;
             text-transform: uppercase;
             color: white;
             font-size: 1.7rem;
             display: flex;
+            padding: .5rem 0;
+            padding-right: 3rem;
+            padding-left: 4rem;
+            grid-column: col-start 7/span 6;
+            border-bottom-right-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+
+            background: $prim;
 
             span {
                 font-weight: bold;
@@ -272,6 +280,7 @@ header {
                 text-transform: uppercase;
                 line-height: 1;
                 min-height: 5.4rem;
+                font-weight: bold;
             }
 
             .text-container {
@@ -385,6 +394,7 @@ header {
     border-top: 1px solid $gray-light;
     position: relative;
     margin-bottom: 3.3rem;
+
     .headline {
         h2 {
             color: white;
@@ -408,8 +418,10 @@ header {
                 margin-bottom: 2rem;
             }
 
+            color: #848484;
             position: relative;
-
+            font-style: italic;
+            font-size: 1.8rem;
             .quote {
                 position: absolute;
 
@@ -456,6 +468,10 @@ header {
         }
 
         .view-all {
+            a {
+                text-decoration: none;
+            }
+
             border-top: 1px solid $gray-line;
             display: flex;
             justify-content: space-between;
@@ -472,6 +488,7 @@ header {
                 display: inline-flex;
                 padding: .5rem;
                 background: $prim;
+
                 img {
                     margin: .4rem;
                     width: 100%;
@@ -501,6 +518,8 @@ header {
             .stars {
                 img {
                     max-width: 1.7rem;
+                    border-top-left-radius: .6rem;
+                    border-bottom-right-radius: .6rem;
                 }
             }
         }

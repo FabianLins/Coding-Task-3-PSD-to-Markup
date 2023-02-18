@@ -194,22 +194,23 @@ header .header-logo {
 }
 header .phone-header {
   position: absolute;
-  background: #00BBEB;
-  padding: 0.5rem 0;
   top: 0;
   right: 6.5rem;
-  display: flex;
-  border-bottom-left-radius: 5rem;
+  background: #EEEFEF;
   border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  display: flex;
 }
 header .phone-header .number {
   color: #737373;
+  margin: 0.5rem 0;
   font-size: 2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
-  margin-left: 3rem;
-  margin-right: 4rem;
+  padding-left: 3rem;
+  grid-column: col-start/span 6;
+  border-bottom-left-radius: 5rem;
 }
 header .phone-header .number .phone-icon {
   align-items: center;
@@ -220,11 +221,17 @@ header .phone-header .number img {
   max-width: 2rem;
 }
 header .phone-header .free-quote {
-  margin-right: 3rem;
   text-transform: uppercase;
   color: white;
   font-size: 1.7rem;
   display: flex;
+  padding: 0.5rem 0;
+  padding-right: 3rem;
+  padding-left: 4rem;
+  grid-column: col-start 7/span 6;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  background: #00BBEB;
 }
 header .phone-header .free-quote span {
   font-weight: bold;
@@ -356,6 +363,7 @@ header .menu a:last-of-type::after {
   text-transform: uppercase;
   line-height: 1;
   min-height: 5.4rem;
+  font-weight: bold;
 }
 .about-us .top .equip .text-container,
 .about-us .top .system .text-container,
@@ -473,7 +481,10 @@ header .menu a:last-of-type::after {
   grid-column: col-start/span 6;
 }
 .our-client .left .feedback {
+  color: #848484;
   position: relative;
+  font-style: italic;
+  font-size: 1.8rem;
 }
 .our-client .left .feedback-container {
   margin-bottom: 2rem;
@@ -519,6 +530,9 @@ header .menu a:last-of-type::after {
   display: flex;
   justify-content: space-between;
 }
+.our-client .left .view-all a {
+  text-decoration: none;
+}
 .our-client .left .view-all .text {
   text-transform: uppercase;
   color: #00BBEB;
@@ -554,6 +568,8 @@ header .menu a:last-of-type::after {
 }
 .our-client .left .profile .stars img {
   max-width: 1.7rem;
+  border-top-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
 }
 .our-client .left .content {
   background: #F7F7F7;
