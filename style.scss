@@ -422,6 +422,7 @@ header {
             position: relative;
             font-style: italic;
             font-size: 1.8rem;
+
             .quote {
                 position: absolute;
 
@@ -452,7 +453,7 @@ header {
             &::before {
                 left: 6rem;
                 bottom: -19px;
-                border-color: $gray-lighter transparent transparent $gray-lighter ;
+                border-color: $gray-lighter transparent transparent $gray-lighter;
                 border-width: 10px;
                 z-index: 2;
             }
