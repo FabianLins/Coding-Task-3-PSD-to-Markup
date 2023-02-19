@@ -24,6 +24,41 @@ body {
     font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
 }
 
+.btn {
+    z-index: 2;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: color .08s linear;
+
+    &.prim {
+        background: $prim;
+        color: white;
+
+        &:hover {
+            color: $gray-dark;
+
+            &::before {
+                transform: translateX(0);
+            }
+        }
+
+        &::before {
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background: $gray-light;
+            z-index: -1;
+            transform: translateX(-110%);
+            transition: transform $trans;
+            box-shadow: 0 0 3rem $gray-light;
+        }
+    }
+}
+
 .bold {
     font-weight: bold;
 }
@@ -71,7 +106,6 @@ p {
     transform: translateY(-50%);
     top: 50%;
 }
-
 
 //Header
 header {
@@ -171,7 +205,7 @@ header {
             margin-right: 1rem;
             display: flex;
             align-items: center;
-            transition: $trans;
+            transition: color $trans;
 
             &:hover {
                 color: $prim;
@@ -329,7 +363,6 @@ header {
 
     .bg {
         position: absolute;
-        right: 0;
         top: 0;
         width: 100%;
         height: 100%;
@@ -344,19 +377,30 @@ header {
         margin-left: 2.6rem;
         display: inline-flex;
 
-        .span-container {
+        .label-container {
             display: flex;
             margin-left: auto;
             margin-right: 2.7rem;
             margin-top: 10rem;
 
-            span {
+            label {
+                cursor: pointer;
                 display: block;
-                width: 1.6rem;
-                height: 1.6rem;
                 background: $prim;
                 border-radius: 2px;
-                margin-right: .9rem;
+                background: transparent;
+                border: 1px solid white;
+                transition: background .1s;
+                width: 4rem;
+                height: 4rem;
+                margin-right: 3rem;
+
+                @media only screen and (min-width: $lg) {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-right: .9rem;
+
+                }
 
                 &:last-of-type {
                     margin-right: 0;
@@ -372,6 +416,7 @@ header {
         padding-left: 4rem;
         border-top-left-radius: 7rem;
         border-bottom-right-radius: 7rem;
+        backdrop-filter: blur(.5rem);
 
         &-container {
             display: inline-flex;
@@ -399,13 +444,18 @@ header {
             padding: 2rem;
             padding-left: 2.7rem;
             background: $prim;
-            display: inline-flex;
+            display: flex;
             border-top-left-radius: 4rem;
             border-bottom-right-radius: 4rem;
             text-decoration: none;
-            color: white;
             font-size: 1.7rem;
             font-weight: bold;
+            text-align: center;
+            justify-content: center;
+
+            @media only screen and (min-width: $lg) {
+                display: inline-flex;
+            }
         }
     }
 }
@@ -498,7 +548,6 @@ header {
             }
         }
     }
-
 
     .headline {
         display: flex;
@@ -677,13 +726,6 @@ header {
             border: 1px solid $gray;
             position: relative;
         }
-
-        .right {
-            grid-column: col-start 7/span 6;
-            background: red;
-            position: relative;
-            top: 0;
-        }
     }
 
     .right {
@@ -734,7 +776,6 @@ header {
     span {
         top: 1.8rem;
     }
-
 
     &::before,
     &::after,
@@ -795,13 +836,13 @@ header {
 .menu-bg {
     display: none;
     position: absolute;
-    background: $black;
+    background: rgba($black, .5);
     width: 100%;
     height: 100vh;
     top: 4.6rem;
     left: 0;
-    opacity: 0.5;
     animation: fadeIn .2s;
+    backdrop-filter: blur(.5rem);
 }
 
 @keyframes fadeIn {
@@ -810,6 +851,127 @@ header {
     }
 
     100% {
-        opacity: .5;
+        opacity: 1;
+    }
+}
+
+
+@keyframes sliderFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .51;
+    }
+}
+
+//Slider
+.hero {
+    overflow: hidden;
+
+    .bg {
+        transition: margin $trans;
+        position: absolute;
+
+        &-slider-0 {
+            margin-left: 0;
+        }
+
+        &-slider-1 {
+            margin-left: 100%;
+            animation: sliderFadeIn 1s;
+        }
+
+        &-slider-2 {
+            margin-left: 200%;
+            animation: sliderFadeIn 1s;
+        }
+    }
+}
+
+.slider-images {
+    display: flex;
+}
+
+#slider0 {
+    &:checked {
+        ~.bg-slider-0 {
+            margin-left: 0;
+        }
+
+        ~.bg-slider-1 {
+            margin-left: 100%;
+        }
+
+        ~.bg-slider-2 {
+            margin-left: 200%;
+        }
+
+
+        ~.container {
+            .label-container {
+                label {
+                    &:nth-child(1) {
+                        background: $prim;
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#slider1 {
+    &:checked {
+        ~.bg-slider-0 {
+            margin-left: -100%;
+        }
+
+        ~.bg-slider-1 {
+            margin-left: 0;
+        }
+
+        ~.bg-slider-2 {
+            margin-left: 100%;
+        }
+
+        ~.container {
+            .label-container {
+                label {
+                    &:nth-child(2) {
+                        background: $prim;
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#slider2 {
+    &:checked {
+        ~.bg-slider-0 {
+            margin-left: -200%;
+        }
+
+        ~.bg-slider-1 {
+            margin-left: -100%;
+        }
+
+        ~.bg-slider-2 {
+            margin-left: 0%;
+        }
+
+        ~.container {
+            .label-container {
+                label {
+                    &:nth-child(3) {
+                        background: $prim;
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
     }
 }
