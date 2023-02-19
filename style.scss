@@ -299,6 +299,24 @@ header {
             }
         }
     }
+
+    @media only screen and (max-width: $sm) {
+        .phone-header {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+        .mobile-header-logo {
+            display: none !important;
+        }
+    }
+
+    @media only screen and (min-width: $lg) {
+        .menu-bg {
+            display: none !important;
+        }
+    }
 }
 
 //Hero

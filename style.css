@@ -373,6 +373,21 @@ header .mobile-header-logo {
     margin-right: 0;
   }
 }
+@media only screen and (max-width: 576px) {
+  header .phone-header {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  header .mobile-header-logo {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header .menu-bg {
+    display: none !important;
+  }
+}
 
 .hero {
   background-color: black;
