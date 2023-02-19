@@ -748,7 +748,7 @@ header {
         border-radius: 9999px;
         transform-origin: left center;
         transition: opacity $trans, width 0.1s,
-            rotate $trans, translate $trans,
+            transform 0.2s linear, translate $trans,
             background-color $trans, margin $trans;
     }
 }

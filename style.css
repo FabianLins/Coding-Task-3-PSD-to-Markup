@@ -751,7 +751,7 @@ header .mobile-header-logo {
   background: white;
   border-radius: 9999px;
   transform-origin: left center;
-  transition: opacity 0.2s ease-in, width 0.1s, rotate 0.2s ease-in, translate 0.2s ease-in, background-color 0.2s ease-in, margin 0.2s ease-in;
+  transition: opacity 0.2s ease-in, width 0.1s, transform 0.2s linear, translate 0.2s ease-in, background-color 0.2s ease-in, margin 0.2s ease-in;
 }
 
 #menu-toggle {
