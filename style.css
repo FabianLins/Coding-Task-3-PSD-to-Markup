@@ -460,6 +460,9 @@ header .mobile-header-logo {
   height: 4rem;
   margin-right: 3rem;
 }
+.hero .squares .label-container label:hover {
+  background: rgba(133, 230, 255, 0.5);
+}
 @media only screen and (min-width: 992px) {
   .hero .squares .label-container label {
     width: 1.6rem;
@@ -891,6 +894,7 @@ header .mobile-header-logo {
 #slider0:checked ~ .container .label-container label:nth-child(1) {
   background: #00BBEB;
   border-color: transparent;
+  cursor: unset;
 }
 
 #slider1:checked ~ .bg-slider-0 {
@@ -905,6 +909,7 @@ header .mobile-header-logo {
 #slider1:checked ~ .container .label-container label:nth-child(2) {
   background: #00BBEB;
   border-color: transparent;
+  cursor: unset;
 }
 
 #slider2:checked ~ .bg-slider-0 {
@@ -919,4 +924,5 @@ header .mobile-header-logo {
 #slider2:checked ~ .container .label-container label:nth-child(3) {
   background: #00BBEB;
   border-color: transparent;
+  cursor: unset;
 }/*# sourceMappingURL=style.css.map */

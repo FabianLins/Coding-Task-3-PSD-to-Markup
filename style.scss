@@ -395,6 +395,10 @@ header {
                 height: 4rem;
                 margin-right: 3rem;
 
+                &:hover {
+                    background: rgba(lighten($prim, 30), .5);
+                }
+
                 @media only screen and (min-width: $lg) {
                     width: 1.6rem;
                     height: 1.6rem;
@@ -908,13 +912,13 @@ header {
             margin-left: 200%;
         }
 
-
         ~.container {
             .label-container {
                 label {
                     &:nth-child(1) {
                         background: $prim;
                         border-color: transparent;
+                        cursor: unset;
                     }
                 }
             }
@@ -942,6 +946,7 @@ header {
                     &:nth-child(2) {
                         background: $prim;
                         border-color: transparent;
+                        cursor: unset;
                     }
                 }
             }
@@ -969,6 +974,7 @@ header {
                     &:nth-child(3) {
                         background: $prim;
                         border-color: transparent;
+                        cursor: unset;
                     }
                 }
             }
