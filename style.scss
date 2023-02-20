@@ -547,6 +547,14 @@ header {
                 .bottom {
                     display: flex;
                     justify-content: center;
+                    @media only screen and (max-width: $lg) {
+                        .btn{
+                            width: 100%;
+                            justify-content: center;
+                            font-size: 2rem;
+                        }
+                    }
+        
                 }
             }
         }

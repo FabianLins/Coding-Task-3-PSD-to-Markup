@@ -596,6 +596,15 @@ header .mobile-header-logo {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 992px) {
+  .about-us .top .equip .text-container .bottom .btn,
+  .about-us .top .system .text-container .bottom .btn,
+  .about-us .top .month-bill .text-container .bottom .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 2rem;
+  }
+}
 .about-us .top .equip {
   grid-column: col-start/span 12;
 }
