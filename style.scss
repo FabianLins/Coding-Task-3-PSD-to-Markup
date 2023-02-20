@@ -57,6 +57,65 @@ body {
             box-shadow: 0 0 3rem $gray-light;
         }
     }
+
+    &.outline {
+        text-transform: uppercase;
+        padding: .4rem 1.3rem .8rem 2.1rem;
+        display: inline-flex;
+        border-top-left-radius: 3.2rem;
+        border-bottom-right-radius: 3.2rem;
+        text-decoration: none;
+        color: white;
+        font-size: 1.7rem;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid $font;
+        position: relative;
+
+        span {
+            color: $font;
+            transition: .2s linear;
+        }
+
+        img {
+            margin-left: 1rem;
+            margin-top: 2px;
+            max-width: 1.3rem;
+            position: relative;
+            transform: rotate(-90deg);
+            transition: filter .3s linear;
+            filter: invert(45%) sepia(0%) saturate(15%) hue-rotate(144deg) brightness(98%) contrast(75%);
+        }
+
+        &:hover {
+            span {
+                color: white;
+            }
+
+            img {
+                filter: sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+            }
+
+            &::before {
+                transform: translateX(0);
+            }
+        }
+
+        &::before {
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background: $prim;
+            z-index: -1;
+            transform: translateX(-120%);
+            transition: transform $trans;
+            box-shadow: 0 0 3rem $prim;
+        }
+    }
 }
 
 .bold {
@@ -467,6 +526,7 @@ header {
 //About us
 .about-us {
     .top {
+        gap: 3rem;
 
         .equip,
         .system,
@@ -488,48 +548,61 @@ header {
                     display: flex;
                     justify-content: center;
                 }
-
-                .btn {
-                    text-transform: uppercase;
-                    padding: .4rem 1.3rem .8rem 2.1rem;
-                    display: inline-flex;
-                    border-top-left-radius: 3.2rem;
-                    border-bottom-right-radius: 3.2rem;
-                    text-decoration: none;
-                    color: white;
-                    font-size: 1.7rem;
-                    font-weight: bold;
-                    display: inline-flex;
-                    align-items: center;
-                    border: 1px solid $font;
-
-                    span {
-                        color: $font;
-                    }
-
-                    img {
-                        margin-left: 1rem;
-                        margin-top: 2px;
-                        max-width: 1.3rem;
-                        position: relative;
-                        transform: rotate(-90deg);
-                        filter: invert(45%) sepia(0%) saturate(15%) hue-rotate(144deg) brightness(98%) contrast(75%);
-                    }
-                }
             }
         }
 
         .equip {
-            grid-column: col-start/span 4;
+            grid-column: col-start/span 12;
+
+            @media only screen and (min-width: $lg) {
+                grid-column: col-start/span 4;
+            }
         }
 
         .system {
-            grid-column: col-start 5/span 4;
+            grid-column: col-start/span 12;
 
+            @media only screen and (min-width: $lg) {
+                grid-column: col-start 5/span 4;
+            }
         }
 
         .month-bill {
-            grid-column: col-start 9/span 4;
+            grid-column: col-start/span 12;
+
+            @media only screen and (min-width: $lg) {
+                grid-column: col-start 9/span 4;
+            }
+
+        }
+
+        .system,
+        .month-bill {
+            border-top: 1px solid $gray-line;
+            padding-top: 3rem;
+
+            .icon-container {
+                transform: translateY(0);
+            }
+
+            .text-container {
+                margin-top: 2rem;
+            }
+
+            @media only screen and (min-width: $lg) {
+                padding-top: 0;
+                border: none;
+
+                .icon-container {
+                    transform: translateY(-50%);
+                }
+
+                .text-container {
+                    margin-top: -2rem;
+                }
+
+            }
+
 
         }
 
@@ -537,6 +610,12 @@ header {
             &-container {
                 position: relative;
                 transform: translateY(-50%);
+
+                @media only screen and (min-width: $lg) {
+                    grid-column: col-start/span 4;
+
+                }
+
             }
 
             padding: 2.2rem;
@@ -592,6 +671,9 @@ header {
     position: relative;
     margin-bottom: 3.3rem;
 
+
+
+
     .headline {
         h2 {
             color: white;
@@ -608,11 +690,32 @@ header {
     }
 
     .left {
-        grid-column: col-start/span 6;
+        grid-column: col-start/span 12;
+
+
+
+        @media only screen and (min-width: $lg) {
+            grid-column: col-start/span 6;
+
+        }
+
+        @media only screen and (max-width: $lg) {
+            .container-left {
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+        }
 
         .feedback {
             &-container {
                 margin-bottom: 2rem;
+                max-width: 700px;
+
+                @media only screen and (max-width: $lg) {
+                    margin: 0 auto 2rem auto;
+                }
+
             }
 
             color: #848484;
@@ -733,7 +836,20 @@ header {
     }
 
     .right {
-        grid-column: col-start 7/span 6;
+        grid-column: col-start /span 12;
+
+        @media only screen and (min-width: $lg) {
+            grid-column: col-start 7/span 6;
+        }
+
+        @media only screen and (max-width: $lg) {
+            .container-right {
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+        }
+
         margin: 1.7rem 0;
 
         iframe {
@@ -752,6 +868,31 @@ header {
         p {
             color: $gray-dark;
             margin-top: 1.6rem;
+        }
+    }
+
+    @media only screen and (max-width: $lg) {
+        .left {
+            .view-all {
+                align-items: center;
+                padding-top: 1rem;
+
+                .text {
+                    font-size: 2rem;
+                    letter-spacing: 1px;
+                    width: 100%;
+                    padding: 1rem;
+                    background: $gray-lighter;
+                    border: 1px solid $gray;
+                    border-bottom-left-radius: 2rem;
+                }
+
+                .icon {
+                    padding: 1.5rem;
+                    border: 1px solid darken($prim, 5);
+
+                }
+            }
         }
     }
 }

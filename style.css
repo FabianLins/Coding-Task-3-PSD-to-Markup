@@ -170,6 +170,56 @@ body {
   transition: transform 0.2s ease-in;
   box-shadow: 0 0 3rem #D1D1D1;
 }
+.btn.outline {
+  text-transform: uppercase;
+  padding: 0.4rem 1.3rem 0.8rem 2.1rem;
+  display: inline-flex;
+  border-top-left-radius: 3.2rem;
+  border-bottom-right-radius: 3.2rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #737373;
+  position: relative;
+}
+.btn.outline span {
+  color: #737373;
+  transition: 0.2s linear;
+}
+.btn.outline img {
+  margin-left: 1rem;
+  margin-top: 2px;
+  max-width: 1.3rem;
+  position: relative;
+  transform: rotate(-90deg);
+  transition: filter 0.3s linear;
+  filter: invert(45%) sepia(0%) saturate(15%) hue-rotate(144deg) brightness(98%) contrast(75%);
+}
+.btn.outline:hover span {
+  color: white;
+}
+.btn.outline:hover img {
+  filter: sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+.btn.outline:hover::before {
+  transform: translateX(0);
+}
+.btn.outline::before {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: #00BBEB;
+  z-index: -1;
+  transform: translateX(-120%);
+  transition: transform 0.2s ease-in;
+  box-shadow: 0 0 3rem #00BBEB;
+}
 
 .bold {
   font-weight: bold;
@@ -521,6 +571,9 @@ header .mobile-header-logo {
   }
 }
 
+.about-us .top {
+  gap: 3rem;
+}
 .about-us .top .equip h3,
 .about-us .top .system h3,
 .about-us .top .month-bill h3 {
@@ -543,45 +596,57 @@ header .mobile-header-logo {
   display: flex;
   justify-content: center;
 }
-.about-us .top .equip .text-container .btn,
-.about-us .top .system .text-container .btn,
-.about-us .top .month-bill .text-container .btn {
-  text-transform: uppercase;
-  padding: 0.4rem 1.3rem 0.8rem 2.1rem;
-  display: inline-flex;
-  border-top-left-radius: 3.2rem;
-  border-bottom-right-radius: 3.2rem;
-  text-decoration: none;
-  color: white;
-  font-size: 1.7rem;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid #737373;
-}
-.about-us .top .equip .text-container .btn span,
-.about-us .top .system .text-container .btn span,
-.about-us .top .month-bill .text-container .btn span {
-  color: #737373;
-}
-.about-us .top .equip .text-container .btn img,
-.about-us .top .system .text-container .btn img,
-.about-us .top .month-bill .text-container .btn img {
-  margin-left: 1rem;
-  margin-top: 2px;
-  max-width: 1.3rem;
-  position: relative;
-  transform: rotate(-90deg);
-  filter: invert(45%) sepia(0%) saturate(15%) hue-rotate(144deg) brightness(98%) contrast(75%);
-}
 .about-us .top .equip {
-  grid-column: col-start/span 4;
+  grid-column: col-start/span 12;
+}
+@media only screen and (min-width: 992px) {
+  .about-us .top .equip {
+    grid-column: col-start/span 4;
+  }
 }
 .about-us .top .system {
-  grid-column: col-start 5/span 4;
+  grid-column: col-start/span 12;
+}
+@media only screen and (min-width: 992px) {
+  .about-us .top .system {
+    grid-column: col-start 5/span 4;
+  }
 }
 .about-us .top .month-bill {
-  grid-column: col-start 9/span 4;
+  grid-column: col-start/span 12;
+}
+@media only screen and (min-width: 992px) {
+  .about-us .top .month-bill {
+    grid-column: col-start 9/span 4;
+  }
+}
+.about-us .top .system,
+.about-us .top .month-bill {
+  border-top: 1px solid #E9E9E9;
+  padding-top: 3rem;
+}
+.about-us .top .system .icon-container,
+.about-us .top .month-bill .icon-container {
+  transform: translateY(0);
+}
+.about-us .top .system .text-container,
+.about-us .top .month-bill .text-container {
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 992px) {
+  .about-us .top .system,
+  .about-us .top .month-bill {
+    padding-top: 0;
+    border: none;
+  }
+  .about-us .top .system .icon-container,
+  .about-us .top .month-bill .icon-container {
+    transform: translateY(-50%);
+  }
+  .about-us .top .system .text-container,
+  .about-us .top .month-bill .text-container {
+    margin-top: -2rem;
+  }
 }
 .about-us .top .icon {
   padding: 2.2rem;
@@ -595,6 +660,11 @@ header .mobile-header-logo {
 .about-us .top .icon-container {
   position: relative;
   transform: translateY(-50%);
+}
+@media only screen and (min-width: 992px) {
+  .about-us .top .icon-container {
+    grid-column: col-start/span 4;
+  }
 }
 .about-us .top .icon img {
   margin: 0 auto;
@@ -645,7 +715,19 @@ header .mobile-header-logo {
   margin-bottom: 2rem;
 }
 .our-client .left {
-  grid-column: col-start/span 6;
+  grid-column: col-start/span 12;
+}
+@media only screen and (min-width: 992px) {
+  .our-client .left {
+    grid-column: col-start/span 6;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .our-client .left .container-left {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 }
 .our-client .left .feedback {
   color: #848484;
@@ -655,6 +737,12 @@ header .mobile-header-logo {
 }
 .our-client .left .feedback-container {
   margin-bottom: 2rem;
+  max-width: 700px;
+}
+@media only screen and (max-width: 992px) {
+  .our-client .left .feedback-container {
+    margin: 0 auto 2rem auto;
+  }
 }
 .our-client .left .feedback .quote {
   position: absolute;
@@ -747,8 +835,20 @@ header .mobile-header-logo {
   position: relative;
 }
 .our-client .right {
-  grid-column: col-start 7/span 6;
+  grid-column: col-start/span 12;
   margin: 1.7rem 0;
+}
+@media only screen and (min-width: 992px) {
+  .our-client .right {
+    grid-column: col-start 7/span 6;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .our-client .right .container-right {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 }
 .our-client .right iframe {
   width: 100%;
@@ -764,6 +864,25 @@ header .mobile-header-logo {
 .our-client .right p {
   color: #848484;
   margin-top: 1.6rem;
+}
+@media only screen and (max-width: 992px) {
+  .our-client .left .view-all {
+    align-items: center;
+    padding-top: 1rem;
+  }
+  .our-client .left .view-all .text {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 1rem;
+    background: #F7F7F7;
+    border: 1px solid #E6E6E6;
+    border-bottom-left-radius: 2rem;
+  }
+  .our-client .left .view-all .icon {
+    padding: 1.5rem;
+    border: 1px solid #00a7d2;
+  }
 }
 
 .hamburger-menu {
