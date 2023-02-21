@@ -931,13 +931,13 @@ header .mobile-header-logo {
 #menu-toggle {
   position: absolute;
 }
-#menu-toggle:checked ~ .menu-bg {
+#menu-toggle:checked ~ .menu-container .menu-bg {
   display: block;
 }
-#menu-toggle:checked ~ .menu {
+#menu-toggle:checked ~ .menu-container .menu {
   left: 0;
 }
-#menu-toggle:checked ~ .hamburger-menu::before {
+#menu-toggle:checked ~ .menu-container .hamburger-menu::before {
   transform: rotate(135deg);
   width: 3rem;
   top: 18px;
@@ -945,7 +945,7 @@ header .mobile-header-logo {
   margin-left: 1rem;
   top: 0.7rem;
 }
-#menu-toggle:checked ~ .hamburger-menu::after {
+#menu-toggle:checked ~ .menu-container .hamburger-menu::after {
   transform: rotate(-135deg);
   width: 3rem;
   top: 18px;
@@ -953,7 +953,7 @@ header .mobile-header-logo {
   margin-left: 1rem;
   top: 2.78rem;
 }
-#menu-toggle:checked ~ .hamburger-menu span {
+#menu-toggle:checked ~ .menu-container .hamburger-menu span {
   opacity: 0;
   margin-left: -6rem;
 }
@@ -1011,7 +1011,7 @@ header .mobile-header-logo {
 }
 
 #slider0:checked ~ .bg-slider-0 {
-  margin-left: 0;
+  margin-left: 0%;
 }
 #slider0:checked ~ .bg-slider-1 {
   margin-left: 100%;
@@ -1029,7 +1029,7 @@ header .mobile-header-logo {
   margin-left: -100%;
 }
 #slider1:checked ~ .bg-slider-1 {
-  margin-left: 0;
+  margin-left: 0%;
 }
 #slider1:checked ~ .bg-slider-2 {
   margin-left: 100%;

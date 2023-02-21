@@ -547,14 +547,15 @@ header {
                 .bottom {
                     display: flex;
                     justify-content: center;
+
                     @media only screen and (max-width: $lg) {
-                        .btn{
+                        .btn {
                             width: 100%;
                             justify-content: center;
                             font-size: 2rem;
                         }
                     }
-        
+
                 }
             }
         }
@@ -951,36 +952,38 @@ header {
     position: absolute;
 
     &:checked {
-        ~.menu-bg {
-            display: block;
-        }
-
-        ~.menu {
-            left: 0;
-        }
-
-        ~.hamburger-menu {
-            &::before {
-                transform: rotate(135deg);
-                width: 3rem;
-                top: 18px;
-                left: 50%;
-                margin-left: 1rem;
-                top: .7rem;
+        ~.menu-container {
+            .menu-bg {
+                display: block;
             }
 
-            &::after {
-                transform: rotate(-135deg);
-                width: 3rem;
-                top: 18px;
-                left: 50%;
-                margin-left: 1rem;
-                top: 2.78rem;
+            .menu {
+                left: 0;
             }
 
-            span {
-                opacity: 0;
-                margin-left: -6rem;
+            .hamburger-menu {
+                &::before {
+                    transform: rotate(135deg);
+                    width: 3rem;
+                    top: 18px;
+                    left: 50%;
+                    margin-left: 1rem;
+                    top: .7rem;
+                }
+
+                &::after {
+                    transform: rotate(-135deg);
+                    width: 3rem;
+                    top: 18px;
+                    left: 50%;
+                    margin-left: 1rem;
+                    top: 2.78rem;
+                }
+
+                span {
+                    opacity: 0;
+                    margin-left: -6rem;
+                }
             }
         }
     }
@@ -1007,7 +1010,6 @@ header {
         opacity: 1;
     }
 }
-
 
 @keyframes sliderFadeIn {
     0% {
@@ -1047,83 +1049,29 @@ header {
     display: flex;
 }
 
-#slider0 {
-    &:checked {
-        ~.bg-slider-0 {
-            margin-left: 0;
-        }
-
-        ~.bg-slider-1 {
-            margin-left: 100%;
-        }
-
-        ~.bg-slider-2 {
-            margin-left: 200%;
-        }
-
-        ~.container {
-            .label-container {
-                label {
-                    &:nth-child(1) {
-                        background: $prim;
-                        border-color: transparent;
-                        cursor: unset;
-                    }
-                }
+@for $i from 0 through 2 {
+    #slider#{$i} {
+        &:checked {
+            ~.bg-slider-0 {
+                margin-left: #{$i * -100%};
             }
-        }
-    }
-}
 
-#slider1 {
-    &:checked {
-        ~.bg-slider-0 {
-            margin-left: -100%;
-        }
-
-        ~.bg-slider-1 {
-            margin-left: 0;
-        }
-
-        ~.bg-slider-2 {
-            margin-left: 100%;
-        }
-
-        ~.container {
-            .label-container {
-                label {
-                    &:nth-child(2) {
-                        background: $prim;
-                        border-color: transparent;
-                        cursor: unset;
-                    }
-                }
+            ~.bg-slider-1 {
+                margin-left: #{100% - $i * 100%};
             }
-        }
-    }
-}
 
-#slider2 {
-    &:checked {
-        ~.bg-slider-0 {
-            margin-left: -200%;
-        }
+            ~.bg-slider-2 {
+                margin-left: #{200% - $i * 100%};
+            }
 
-        ~.bg-slider-1 {
-            margin-left: -100%;
-        }
-
-        ~.bg-slider-2 {
-            margin-left: 0%;
-        }
-
-        ~.container {
-            .label-container {
-                label {
-                    &:nth-child(3) {
-                        background: $prim;
-                        border-color: transparent;
-                        cursor: unset;
+            ~.container {
+                .label-container {
+                    label {
+                        &:nth-child(#{$i + 1}) {
+                            background: $prim;
+                            border-color: transparent;
+                            cursor: unset;
+                        }
                     }
                 }
             }
