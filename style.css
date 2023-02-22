@@ -551,6 +551,9 @@ header .mobile-header-logo {
   color: white;
   letter-spacing: 0.2px;
 }
+.hero .box p, .hero .box .title {
+  word-break: break-word;
+}
 .hero .box .btn {
   text-transform: uppercase;
   padding: 2rem;
@@ -573,6 +576,11 @@ header .mobile-header-logo {
 
 .about-us .top {
   gap: 3rem;
+}
+@media only screen and (max-width: 992px) {
+  .about-us .top {
+    gap: unset;
+  }
 }
 .about-us .top .equip h3,
 .about-us .top .system h3,
@@ -830,10 +838,12 @@ header .mobile-header-logo {
 .our-client .left .profile .left img {
   margin-right: 1.2rem;
 }
+.our-client .left .profile .stars {
+  display: flex;
+  gap: 0.3rem;
+}
 .our-client .left .profile .stars img {
   max-width: 1.7rem;
-  border-top-left-radius: 0.6rem;
-  border-bottom-right-radius: 0.6rem;
 }
 .our-client .left .content {
   background: #F7F7F7;

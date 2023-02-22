@@ -501,6 +501,9 @@ header {
             color: white;
             letter-spacing: .2px;
         }
+        p, .title{
+            word-break: break-word;
+        }
 
         .btn {
             text-transform: uppercase;
@@ -527,6 +530,10 @@ header {
 .about-us {
     .top {
         gap: 3rem;
+
+        @media only screen and (max-width: $lg) {
+            gap: unset;
+        }
 
         .equip,
         .system,
@@ -826,10 +833,10 @@ header {
             }
 
             .stars {
+                display: flex;
+                gap: .3rem;
                 img {
                     max-width: 1.7rem;
-                    border-top-left-radius: .6rem;
-                    border-bottom-right-radius: .6rem;
                 }
             }
         }
