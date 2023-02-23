@@ -70,7 +70,7 @@ body {
         font-weight: bold;
         display: inline-flex;
         align-items: center;
-        border: 1px solid $font;
+        border: .2rem solid $font;
         position: relative;
 
         span {
@@ -416,7 +416,7 @@ header {
 .hero {
     background-color: black;
     padding-top: 13rem;
-    padding-bottom: 11rem;
+    padding-bottom: 2.5rem;
     position: relative;
     height: 100%;
 
@@ -432,8 +432,6 @@ header {
     }
 
     .squares {
-        margin-left: auto;
-        margin-left: 2.6rem;
         display: inline-flex;
 
         .label-container {
@@ -494,6 +492,8 @@ header {
             font-size: 5rem;
             line-height: 1;
             font-weight: bold;
+            word-break: break-word;
+
         }
 
         p {
@@ -501,7 +501,9 @@ header {
             color: white;
             letter-spacing: .2px;
         }
-        p, .title{
+
+        p,
+        .title {
             word-break: break-word;
         }
 
@@ -549,7 +551,7 @@ header {
             }
 
             .text-container {
-                margin-top: -2rem;
+                margin-top: 2rem;
 
                 .bottom {
                     display: flex;
@@ -592,40 +594,23 @@ header {
 
         }
 
+        .equip {
+            padding-top: 3rem;
+        }
+
         .system,
         .month-bill {
             border-top: 1px solid $gray-line;
             padding-top: 3rem;
 
-            .icon-container {
-                transform: translateY(0);
-            }
-
             .text-container {
                 margin-top: 2rem;
             }
-
-            @media only screen and (min-width: $lg) {
-                padding-top: 0;
-                border: none;
-
-                .icon-container {
-                    transform: translateY(-50%);
-                }
-
-                .text-container {
-                    margin-top: -2rem;
-                }
-
-            }
-
 
         }
 
         .icon {
             &-container {
-                position: relative;
-                transform: translateY(-50%);
 
                 @media only screen and (min-width: $lg) {
                     grid-column: col-start/span 4;
@@ -835,6 +820,7 @@ header {
             .stars {
                 display: flex;
                 gap: .3rem;
+
                 img {
                     max-width: 1.7rem;
                 }
@@ -1005,7 +991,8 @@ header {
     top: 4.6rem;
     left: 0;
     animation: fadeIn .2s;
-    backdrop-filter: blur(.5rem);
+    backdrop-filter: blur(.25rem);
+    filter: blur(.001px);
 }
 
 @keyframes fadeIn {
