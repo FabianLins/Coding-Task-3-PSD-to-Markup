@@ -146,25 +146,49 @@ body {
   position: relative;
   overflow: hidden;
   transition: color 0.08s linear;
+  /*&.prim {
+      background: $prim;
+      color: white;
+
+      &:hover {
+          color: $gray-dark;
+
+          &::before {
+              transform: translateX(0);
+          }
+      }
+
+      &::before {
+          content: '';
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          position: absolute;
+          background: $gray-light;
+          z-index: -1;
+          transform: translateX(-110%);
+          transition: transform $trans;
+          box-shadow: 0 0 3rem $gray-light;
+      }
+  }*/
 }
-.btn.prim {
-  background: #00BBEB;
+.btn.outline-white {
+  background: transparent;
   color: white;
+  border: solid 2px white;
 }
-.btn.prim:hover {
-  color: #848484;
-}
-.btn.prim:hover::before {
+.btn.outline-white:hover::before {
   transform: translateX(0);
 }
-.btn.prim::before {
+.btn.outline-white::before {
   content: "";
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  background: #D1D1D1;
+  background: rgba(0, 187, 235, 0.5);
   z-index: -1;
   transform: translateX(-110%);
   transition: transform 0.2s ease-in;
@@ -197,6 +221,9 @@ body {
   transform: rotate(-90deg);
   transition: filter 0.3s linear;
   filter: invert(45%) sepia(0%) saturate(15%) hue-rotate(144deg) brightness(98%) contrast(75%);
+}
+.btn.outline:hover {
+  border-color: #00BBEB;
 }
 .btn.outline:hover span {
   color: white;
@@ -472,7 +499,7 @@ header .mobile-header-logo {
 
 .hero {
   background-color: black;
-  padding-top: 13rem;
+  padding-top: 12rem;
   padding-bottom: 2.5rem;
   position: relative;
   height: 100%;
@@ -494,7 +521,7 @@ header .mobile-header-logo {
   display: flex;
   margin-left: auto;
   margin-right: 2.7rem;
-  margin-top: 10rem;
+  margin-top: 10.5rem;
 }
 .hero .squares .label-container label {
   cursor: pointer;
@@ -549,6 +576,7 @@ header .mobile-header-logo {
   margin: 2.6rem 0;
   color: white;
   letter-spacing: 0.2px;
+  text-align: justify;
 }
 .hero .box p,
 .hero .box .title {
@@ -556,9 +584,9 @@ header .mobile-header-logo {
 }
 .hero .box .btn {
   text-transform: uppercase;
-  padding: 2rem;
+  padding: 1.5rem;
   padding-left: 2.7rem;
-  background: #00BBEB;
+  padding-right: 2.5rem;
   display: flex;
   border-top-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
@@ -637,17 +665,22 @@ header .mobile-header-logo {
     grid-column: col-start 9/span 4;
   }
 }
-.about-us .top .equip {
-  padding-top: 3rem;
-}
 .about-us .top .system,
+.about-us .top .equip,
 .about-us .top .month-bill {
-  border-top: 1px solid #E9E9E9;
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 }
 .about-us .top .system .text-container,
+.about-us .top .equip .text-container,
 .about-us .top .month-bill .text-container {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+@media only screen and (max-width: 992px) {
+  .about-us .top .system,
+  .about-us .top .month-bill {
+    border-top: 1px solid #E9E9E9;
+    margin-top: 2rem;
+  }
 }
 .about-us .top .icon {
   padding: 2.2rem;
@@ -670,7 +703,7 @@ header .mobile-header-logo {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  margin-top: 3.5rem;
+  margin-top: 2.3rem;
 }
 .about-us .headline h3 {
   text-align: center;
@@ -691,6 +724,9 @@ header .mobile-header-logo {
 .about-us p {
   text-align: center;
   color: #737373;
+  margin-bottom: 1.5rem;
+}
+.about-us p:nth-of-type(2) {
   margin-bottom: 2rem;
 }
 
@@ -704,12 +740,12 @@ header .mobile-header-logo {
   background: #00BBEB;
   text-transform: uppercase;
   font-size: 3rem;
-  border-bottom-right-radius: 4rem;
-  padding: 1rem 1.8rem 1rem 0rem;
+  border-bottom-right-radius: 5rem;
+  padding: 0.5rem 4rem 0.5rem 4rem;
   margin-left: -100%;
   padding-left: 100%;
   display: inline-flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .our-client .left {
   grid-column: col-start/span 12;
@@ -731,6 +767,8 @@ header .mobile-header-logo {
   position: relative;
   font-style: italic;
   font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
 }
 .our-client .left .feedback-container {
   margin-bottom: 2rem;
@@ -745,12 +783,12 @@ header .mobile-header-logo {
   position: absolute;
 }
 .our-client .left .feedback .quote.top {
-  top: 1rem;
+  top: 0.2rem;
   left: 1.3rem;
 }
 .our-client .left .feedback .quote.bot {
   bottom: 1rem;
-  right: 1.3rem;
+  right: 1rem;
   transform: rotate(180deg);
 }
 .our-client .left .feedback::after, .our-client .left .feedback::before {
@@ -829,13 +867,13 @@ header .mobile-header-logo {
   background: #F7F7F7;
   padding: 3.4rem;
   padding-bottom: 3rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 1px solid #E6E6E6;
   position: relative;
 }
 .our-client .right {
   grid-column: col-start/span 12;
-  margin: 1.7rem 0;
+  margin: 1.5rem 0;
 }
 @media only screen and (min-width: 992px) {
   .our-client .right {
@@ -859,10 +897,11 @@ header .mobile-header-logo {
   text-transform: capitalize;
   color: #848484;
   font-size: 1.9rem;
+  font-weight: bold;
 }
 .our-client .right p {
   color: #848484;
-  margin-top: 1.6rem;
+  margin-top: 0.8rem;
 }
 @media only screen and (max-width: 992px) {
   .our-client .left .view-all {

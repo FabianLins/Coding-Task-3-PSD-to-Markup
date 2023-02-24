@@ -31,7 +31,7 @@ body {
     overflow: hidden;
     transition: color .08s linear;
 
-    &.prim {
+    /*&.prim {
         background: $prim;
         color: white;
 
@@ -51,6 +51,32 @@ body {
             right: 0;
             position: absolute;
             background: $gray-light;
+            z-index: -1;
+            transform: translateX(-110%);
+            transition: transform $trans;
+            box-shadow: 0 0 3rem $gray-light;
+        }
+    }*/
+
+    &.outline-white {
+        background: transparent;
+        color: white;
+        border: solid 2px white;
+
+        &:hover {
+            &::before {
+                transform: translateX(0);
+            }
+        }
+
+        &::before {
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            background: rgba($prim, .5);
             z-index: -1;
             transform: translateX(-110%);
             transition: transform $trans;
@@ -89,6 +115,8 @@ body {
         }
 
         &:hover {
+            border-color: $prim;
+
             span {
                 color: white;
             }
@@ -415,7 +443,7 @@ header {
 //Hero
 .hero {
     background-color: black;
-    padding-top: 13rem;
+    padding-top: 12rem;
     padding-bottom: 2.5rem;
     position: relative;
     height: 100%;
@@ -438,7 +466,7 @@ header {
             display: flex;
             margin-left: auto;
             margin-right: 2.7rem;
-            margin-top: 10rem;
+            margin-top: 10.5rem;
 
             label {
                 cursor: pointer;
@@ -500,6 +528,8 @@ header {
             margin: 2.6rem 0;
             color: white;
             letter-spacing: .2px;
+            text-align: justify;
+
         }
 
         p,
@@ -509,9 +539,9 @@ header {
 
         .btn {
             text-transform: uppercase;
-            padding: 2rem;
+            padding: 1.5rem;
             padding-left: 2.7rem;
-            background: $prim;
+            padding-right: 2.5rem;
             display: flex;
             border-top-left-radius: 4rem;
             border-bottom-right-radius: 4rem;
@@ -594,16 +624,21 @@ header {
 
         }
 
-        .equip {
-            padding-top: 3rem;
+        .system,
+        .equip,
+        .month-bill {
+            padding-top: 1.5rem;
+
+            .text-container {
+                margin-top: 2.5rem;
+            }
         }
 
         .system,
         .month-bill {
-            border-top: 1px solid $gray-line;
-            padding-top: 3rem;
 
-            .text-container {
+            @media only screen and (max-width: $lg) {
+                border-top: 1px solid $gray-line;
                 margin-top: 2rem;
             }
 
@@ -637,7 +672,7 @@ header {
         display: flex;
         align-items: center;
         flex-shrink: 0;
-        margin-top: 3.5rem;
+        margin-top: 2.3rem;
 
         h3 {
             text-align: center;
@@ -662,7 +697,11 @@ header {
     p {
         text-align: center;
         color: $font;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+
+        &:nth-of-type(2) {
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -672,28 +711,23 @@ header {
     position: relative;
     margin-bottom: 3.3rem;
 
-
-
-
     .headline {
         h2 {
             color: white;
             background: $prim;
             text-transform: uppercase;
             font-size: 3rem;
-            border-bottom-right-radius: 4rem;
-            padding: 1rem 1.8rem 1rem 0rem;
+            border-bottom-right-radius: 5rem;
+            padding: 0.5rem 4rem 0.5rem 4rem;
             margin-left: -100%;
             padding-left: 100%;
             display: inline-flex;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
     }
 
     .left {
         grid-column: col-start/span 12;
-
-
 
         @media only screen and (min-width: $lg) {
             grid-column: col-start/span 6;
@@ -723,18 +757,20 @@ header {
             position: relative;
             font-style: italic;
             font-size: 1.8rem;
+            text-align: center;
+            font-weight: bold;
 
             .quote {
                 position: absolute;
 
                 &.top {
-                    top: 1rem;
+                    top: .2rem;
                     left: 1.3rem;
                 }
 
                 &.bot {
                     bottom: 1rem;
-                    right: 1.3rem;
+                    right: 1rem;
                     transform: rotate(180deg);
                 }
             }
@@ -831,7 +867,7 @@ header {
             background: $gray-lighter;
             padding: 3.4rem;
             padding-bottom: 3rem;
-            border-radius: 1rem;
+            border-radius: .5rem;
             border: 1px solid $gray;
             position: relative;
         }
@@ -852,7 +888,7 @@ header {
             }
         }
 
-        margin: 1.7rem 0;
+        margin: 1.5rem 0;
 
         iframe {
             width: 100%;
@@ -865,11 +901,12 @@ header {
             text-transform: capitalize;
             color: $gray-dark;
             font-size: 1.9rem;
+            font-weight: bold;
         }
 
         p {
             color: $gray-dark;
-            margin-top: 1.6rem;
+            margin-top: .8rem;
         }
     }
 
