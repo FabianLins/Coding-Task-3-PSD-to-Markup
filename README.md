@@ -18,5 +18,7 @@ It is a showcase on how quick I can transform mockups to markup. I didn't use Ta
 
 I was a bit "handycapped" since I had to work with Affinity Photo and GIMP but got a PSD created in Photoshop. But later one I remebered that I can also open it with the Mac Preview, so I could do some later adjustments.
 
+I would also like to adjust that it is better to use svg images for icons instead of pixel graphics. But I did not want to spend time to remake the Logo in Affinity Designer or Adobe Illustrator without even knowing the font name. So I only used PNGs. The exact task was to deliver a pixel perfect result not a vector perfect result which also led to this decision.
+
 I was also able to spot a bug within Google Chrome using the backdrop-filter:
 https://github.com/FabianLins/Chrome-Backdrop-Filter-Resize-Bug-Report-And-Fix
