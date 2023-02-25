@@ -5,6 +5,8 @@ https://fabianlins.github.io/Coding-Task-3-PSD-to-Markup/
 ## Used technologies/ frameworks
 ###### I make use of those technologies/ frameworks for my project:
 	•	(Vanilla) SCSS
+	•	HTML
+
 
 ## Used 3rd Party Libraries
 I make use of those 3rd party libraries:
