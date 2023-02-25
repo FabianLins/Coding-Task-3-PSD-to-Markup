@@ -8,7 +8,8 @@ $gray-light: #D1D1D1;
 $gray: #E6E6E6;
 $gray-line: #E9E9E9;
 $gray-dark: #848484;
-$gray-darker: #3F3F41;
+$gray-darker: #707070;
+$gray-darkest: #3F3F41;
 $font: #737373;
 $prim: #00BBEB;
 $black: rgb(20, 24, 28);
@@ -234,6 +235,7 @@ header {
             align-items: center;
             padding-left: 3rem;
             border-bottom-left-radius: 5rem;
+            padding-right: .5rem;
 
             .phone-icon {
                 align-items: center;
@@ -287,9 +289,9 @@ header {
         font-size: 1.6rem;
 
         a {
-            color: $font;
+            color: $gray-dark;
             text-decoration: none;
-            margin-right: 1rem;
+            margin-right: 1.1rem;
             display: flex;
             align-items: center;
             transition: color $trans;
@@ -304,10 +306,10 @@ header {
             }
 
             &::after {
-                margin-left: .7rem;
+                margin-left: 1rem;
                 content: '■';
                 font-size: .8rem;
-                color: $font;
+                color: $gray-dark;
             }
 
             &:last-of-type {
@@ -539,9 +541,7 @@ header {
 
         .btn {
             text-transform: uppercase;
-            padding: 1.5rem;
-            padding-left: 2.7rem;
-            padding-right: 2.5rem;
+            padding: 1.2rem 2.5rem 1.2rem 2.7rem;
             display: flex;
             border-top-left-radius: 4rem;
             border-bottom-right-radius: 4rem;
@@ -656,7 +656,7 @@ header {
 
             padding: 2.2rem;
             display: inline-flex;
-            background: $gray-darker;
+            background: $gray-darkest;
             border-radius: 50%;
             position: relative;
             left: 50%;
@@ -753,7 +753,7 @@ header {
 
             }
 
-            color: #848484;
+            color: $gray-dark;
             position: relative;
             font-style: italic;
             font-size: 1.8rem;
@@ -847,6 +847,7 @@ header {
             .left {
                 display: flex;
                 align-items: center;
+                color: $gray-darker;
 
                 img {
                     margin-right: 1.2rem;
